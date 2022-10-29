@@ -1,1 +1,73 @@
+1. Make a folder directly in google drive as TFOD2.x
+2. You can choose any name but make sure to remember the name
+3. Now make a colab notebook in the TFOD2.x folder and go to the link
+4. https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/object_detection_tutorial.ipynb\
+5. Write these commands as shown below one by one 
+6. %cd /content/drive/MyDrive/TFOD2.x
+7. !pip install -U --pre tensorflow=="2.*"
+8. !pip install tf_slim
+9. !pip install pycocotools
+10. 
+    import os
+    import pathlib
+
+
+    if "models" in pathlib.Path.cwd().parts:
+      while "models" in pathlib.Path.cwd().parts:
+        os.chdir('..')
+    elif not pathlib.Path('models').exists():
+      !git clone --depth 1 https://github.com/tensorflow/models
+      
+      
+11. 
+    %%bash
+    cd models/research/
+    protoc object_detection/protos/*.proto --python_out=.
+
+
+12. 
+
+    %cd models/research
+    !cp /content/drive/MyDrive/TFOD2.x/models/research/object_detection/packages/tf2/setup.py .
+    !pip install .
+
+13. 
+
+import numpy as np
+import os
+import six.moves.urllib as urllib
+import sys
+import tarfile
+import tensorflow as tf
+import zipfile
+
+from collections import defaultdict
+from io import StringIO
+from matplotlib import pyplot as plt
+from PIL import Image
+from IPython.display import display
+
+
+
+14. 
+from object_detection.utils import ops as utils_ops
+from object_detection.utils import label_map_util
+from object_detection.utils import visualization_utils as vis_util
+# THis is used to check whether all the object_detection library are working properly or not
+
+15. 
+
+# patch tf1 into `utils.ops`
+utils_ops.tf = tf.compat.v1
+
+# Patch the location of gfile
+tf.gfile = tf.io.gfile
+
+16. Now transfer or copy the dataset from the chess_dataset folder to the model-> research-> object_detection
+
+17. Before sending the chess_dataset.zip to model-> research-> object_detection ,first make sure you download the data in your 
+                                                         local system and then extract it ,then only send the the data
+
+
+18.   Till here our Preparing the dataset for training is done.
 
