@@ -89,3 +89,23 @@ tf.gfile = tf.io.gfile
   27. For untar - use
   
         !tar -xvf ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz
+
+
+
+                FILES SETUP FOR TRAINING
+                
+ 
+ 
+ 28.    Create a folder names as training and inside it move the labelmap.pbtxt
+ 29.   Now in our google drive tod2.x -> model-> research-> object_detection   copy the training folder and  generate_tfrecorc.py file
+ 30.   
+                            Generating tfrecords file from csv format
+ 
+        !python generate_tfrecord.py --csv_input=chess_dataset/train/train.csv --image_dir=chess_dataset/train --output_path=train.record
+ 
+ 
+        !python generate_tfrecord.py --csv_input=chess_dataset/valid/test.csv --image_dir=chess_dataset/valid --output_path=test.record
+ 
+ 31.  Now after running the above two command line train.record and test.record both file will be grnerated that we will need for our upcoming task
+ 
+ 32.  
