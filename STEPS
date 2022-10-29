@@ -122,7 +122,7 @@ tf.gfile = tf.io.gfile
  38.  line 174 == input_path: "PATH_TO_BE_CONFIGURED"    ->     input_path: "train.record"
  39.  line 186 == input_path: "PATH_TO_BE_CONFIGURED"      ->    input_path: "test.record"
  40.  line 167 ==  fine_tune_checkpoint_type: "classification" ->  fine_tune_checkpoint_type: "detection"
-        line 131 = bacth_size = 1
+        line 131 = bacth_size = 1 or 8 
  
  Now do control + S to save 
  
