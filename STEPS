@@ -122,10 +122,26 @@ tf.gfile = tf.io.gfile
  38.  line 174 == input_path: "PATH_TO_BE_CONFIGURED"    ->     input_path: "train.record"
  39.  line 186 == input_path: "PATH_TO_BE_CONFIGURED"      ->    input_path: "test.record"
  40.  line 167 ==  fine_tune_checkpoint_type: "classification" ->  fine_tune_checkpoint_type: "detection"
- 
+        line 131 = bacth_size = 1
  
  Now do control + S to save 
  
  
  41. Now go to the object_detection folder and inside it go to the ssd_resnet_50 folder and the move the pipeline.config to the training folder 
  
+                         Till here the files are setup for the training
+                         
+                         
+                         
+                         
+                         
+                         
+                        Now lets start the training procedure
+                        
+                        
+
+
+42.        A file will be needed names as  - =======      model_main_tf2.py       
+43. It is available under the model-> research-> object_detection -> model_main_tf2.py  
+
+44. 
