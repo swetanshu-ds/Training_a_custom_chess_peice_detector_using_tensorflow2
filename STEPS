@@ -71,3 +71,21 @@ tf.gfile = tf.io.gfile
 
 18.   Till here our Preparing the dataset for training is done.
 
+19.  Go to the github website 
+        https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md
+
+20. Choose any model 
+21.  For example we have choosed here this modes 
+        http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz
+        
+22.  Now we have to clone this model into our object_detection
+23.  First change the path
+24. use this  %cd /content/drive/MyDrive/TFOD2.x/models/research/object_detection
+25.  Now use= ===
+
+  !wget http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz
+  
+  26. Since it was a tar file ,so we need  to un- tar it ,means unzip it.
+  27. For untar - use
+  
+        !tar -xvf ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz
