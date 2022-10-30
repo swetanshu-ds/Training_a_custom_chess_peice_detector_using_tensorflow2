@@ -1,7 +1,8 @@
+        https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/object_detection_tutorial.ipynb\
 1. Make a folder directly in google drive as TFOD2.x
 2. You can choose any name but make sure to remember the name
-3. Now make a colab notebook in the TFOD2.x folder and go to the link
-4. https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/object_detection_tutorial.ipynb\
+3. Now make a colab notebook outside the TFOD2. and not in the TFOD2.x folder and mount the google drive
+4. Now after mounting copy the TFOD2.x path and type %cd /content/drive/MyDrive/TFOD2.x
 5. Write these commands as shown below one by one 
 6. %cd /content/drive/MyDrive/TFOD2.x
 7. !pip install -U --pre tensorflow=="2.*"
@@ -19,7 +20,7 @@
       !git clone --depth 1 https://github.com/tensorflow/models
       
       
-11. 
+11.   using ash command we will do the conversion of protos files to proto python file (.py) 
     %%bash
     cd models/research/
     protoc object_detection/protos/*.proto --python_out=.
@@ -28,6 +29,7 @@
 12. 
 
     %cd models/research
+    #  the cp copmmand will copy the setup.py file to the roiginal directory that is models research folder so that it can directly be installed 
     !cp /content/drive/MyDrive/TFOD2.x/models/research/object_detection/packages/tf2/setup.py .
     !pip install .
 
@@ -63,6 +65,10 @@ utils_ops.tf = tf.compat.v1
 # Patch the location of gfile
 tf.gfile = tf.io.gfile
 
+                    Download Pretrained Model 
+                    right now we are content but we want to be in objectDetection so move to oject_detection
+                    %cd /content/drive/MyDrive/TFOD2.x/models/research/object_detection/chess_dataset
+                    
 16. Now transfer or copy the dataset from the chess_dataset folder to the model-> research-> object_detection
 
 17. Before sending the chess_dataset.zip to model-> research-> object_detection ,first make sure you download the data in your 
