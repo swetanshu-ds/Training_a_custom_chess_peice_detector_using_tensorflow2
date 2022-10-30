@@ -75,6 +75,10 @@ tf.gfile = tf.io.gfile
                                                          local system and then extract it ,then only send the the data
 
 
+
+#   generate_tfrecord files is used does annotation of images
+
+
 18.   Till here our Preparing the dataset for training is done.
 
 19.  Go to the github website 
@@ -148,6 +152,25 @@ tf.gfile = tf.io.gfile
 
 
 42.        A file will be needed names as  - =======      model_main_tf2.py       
+/content/drive/MyDrive/TFOD2.x/models/research/object_detection/model_main_tf2.py
 43. It is available under the model-> research-> object_detection -> model_main_tf2.py  
 
-44. 
+44. We have to change multiple thigs in pipeline file which is present two place - ssd_resnet_ and training folder
+45. Modify both 
+46. 
+. Line 3 = num_class = 6
+     line 161 == fine_tune_checkpoint: "PATH_TO_BE_CONFIGURED"  ->  fine_tune_checkpoint:  'ssd_resnet50_v1_fpn_640x640_coco17_tpu-8/checkpoint/ckpt-0'
+     
+  line 172 == label_map_path: "PATH_TO_BE_CONFIGURED" ->     label_map_path: "training/labelmap.pbtxt"
+    
+  line 182 == label_map_path: "PATH_TO_BE_CONFIGURED" ->     label_map_path: "training/labelmap.pbtxt"
+ 
+   line 174 == input_path: "PATH_TO_BE_CONFIGURED"    ->     input_path: "train.record"
+   line 186 == input_path: "PATH_TO_BE_CONFIGURED"      ->    input_path: "test.record"
+   line 167 ==  fine_tune_checkpoint_type: "classification" ->  fine_tune_checkpoint_type: "detection"
+   line 131 = bacth_size = 1 or 8 
+   
+47. Now paste this line given below and run
+                !python model_main_tf2.py --model_dir=training --pipeline_config_path=training/pipeline.config 
+
+48.    
