@@ -194,4 +194,17 @@ tf.gfile = tf.io.gfile
         
 52.     !python model_main_tf2.py --model_dir=resume_train --pipeline_config_path=resume_train/pipeline.config 
 53.     Now run the above line
-54.     
+54.     Now  when you reach 1000 epoch or steps ,than we have to interrupt the training  
+55.     So for interrupting use the run time iterupt 
+56.     Then copy paste the same command to resume the training
+56.     !python model_main_tf2.py --model_dir=resume_train --pipeline_config_path=resume_train/pipeline.config 
+57.     Notice that where we interrupted the session at 1000 ,same resume has started from 1000 
+58.           
+
+
+
+                             Converting CKPT to Saved Model Format
+                             Run the below command
+                             
+ 59.    !python exporter_main_v2.py --input_type image_tensor --pipeline_config_path training/pipeline.config --trained_checkpoint_dir training/ --output_directory exported-models/my_model
+ 60.     It will create a new folder name exported-models and inside it our saved model will be present as named = my_model.
