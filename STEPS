@@ -173,4 +173,25 @@ tf.gfile = tf.io.gfile
 47. Now paste this line given below and run
                 !python model_main_tf2.py --model_dir=training --pipeline_config_path=training/pipeline.config 
 
-48.    
+48.     It will take so much time
+
+                                                             RESUME_TRAINING
+                                                             
+49.     Now after this create a folder  in object_detection names as -------   "resume_train"
+50.     COPY LABELMAP.PBTXT AND PIPELINE CONFIG FROM  training folder
+51.     Now go to resume_train pipeline_config file and change the training to resume_train as follows
+        
+        
+        
+        
+        in line 172 and 182 
+        label_map_path : "resume_train/labelmap.pbtxt"
+        
+        
+        
+        
+        
+        
+52.     !python model_main_tf2.py --model_dir=resume_train --pipeline_config_path=resume_train/pipeline.config 
+53.     Now run the above line
+54.     
